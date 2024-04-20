@@ -38,18 +38,11 @@ fn get_municipalities() -> Result<Vec<Municipality>, Box<dyn Error>> {
 }
 
 fn main() {
-    match get_municipalities() {
-        Ok(municipalities) => {
-            println!("Loaded {} municipalities...", municipalities.len());
-            println!("Head:");
-            municipalities
-                .into_iter()
-                .take(5)
-                .for_each(|municipality| println!("{:?}", municipality))
-        }
-        Err(err) => {
-            println!("error running example: {}", err);
-            process::exit(1);
-        }
-    }
+    let municipalities = get_municipalities().expect("Couldn't load municipalities");
+    println!("Loaded {} municipalities...", municipalities.len());
+    println!("Head:");
+    municipalities
+        .into_iter()
+        .take(5)
+        .for_each(|municipality| println!("{:?}", municipality))
 }
