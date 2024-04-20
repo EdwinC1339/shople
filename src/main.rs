@@ -1,5 +1,5 @@
 use serde_derive::Deserialize;
-use std::{error::Error, path, process};
+use std::{error::Error, path};
 
 #[derive(Debug, Deserialize)]
 struct Municipality {
