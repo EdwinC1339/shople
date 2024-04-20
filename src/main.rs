@@ -8,5 +8,9 @@ fn main() {
     municipalities
         .into_iter()
         .take(5)
-        .for_each(|municipality| println!("{:?}", municipality))
+        .for_each(|municipality| println!("{:?}", municipality));
+
+    let vieques_retail = loading::get_retail_data("vieques").unwrap();
+
+    println!("{:?}", vieques_retail)
 }
